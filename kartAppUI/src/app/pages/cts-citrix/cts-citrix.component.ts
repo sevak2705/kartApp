@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cts-citrix.component.scss']
 })
 export class CtsCitrixComponent implements OnInit {
-  pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
+  pdfSrc = 'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf';
   constructor() { }
-  docVisible: boolean = false;
+  docVisible = false;
   ngOnInit() {
   }
-  showDoc(){
+  showDoc() {
     this.docVisible = true;
   }
 
