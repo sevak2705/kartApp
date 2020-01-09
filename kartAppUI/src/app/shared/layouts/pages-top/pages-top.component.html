@@ -1,0 +1,32 @@
+<!-- Page header -->
+<div class="pages-top">
+  <div class="avatar-wrap">
+    <div class="avatar">
+      <img src="{{avatarImgSrc}}" alt="avatar">
+    </div>
+    <div class="user-info-wrap">
+      <span class="user-name" title="{{userName}}">{{userName}}</span>
+      <span class="user-post" title="{{userPost}}">{{userPost}}</span>
+    </div>
+  </div>
+
+  <div class="collapse-menu" (click)="_sidebarToggle()">
+    <i class="fa fa-dedent fa-fw" *ngIf="sidebarToggle"></i>
+    <i class="fa fa-indent fa-fw" *ngIf="!sidebarToggle"></i>
+  </div>
+
+  <div class="msg-tips-wrap" style="width: 350px;">
+    <div  *ngIf="!loggedIn()" class="msg-entrance ring" title="Login">
+      <a class="msg-entrance ring" style="margin-left: 100px;" [routerLink]="['/login']"> <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+    
+    </div>
+    <div *ngIf="loggedIn()" class="msg-entrance email">
+      <span class="user-name" title="user"> Welcome {{currentUser | titlecase}}</span>
+  </div>
+    <div  *ngIf="loggedIn()" style="margin-left: 50px;" class="msg-entrance ring" title="Logout" >
+     
+      <i class="fa fa-sign-out" aria-hidden="true" (click)='logout()'></i>
+    </div>
+    
+  </div>
+</div>

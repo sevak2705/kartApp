@@ -1,0 +1,158 @@
+
+<div class="container-fluid">
+  <div class="row">
+      <div style="font-size: 15px;" (click)="_sidebarToggle()">
+        <mat-icon style="margin-left: 255px;" class="fa fa-chevron-left fa-sm" aria-hidden="true" *ngIf="sidebarToggle"
+          matTooltip="Click to hide"></mat-icon>
+        <mat-icon style="margin-left: 25px;" class="fa fa-chevron-right fa-sm" aria-hidden="true" *ngIf="!sidebarToggle"
+        matTooltip="click to show"></mat-icon>
+      </div>
+    <div class="col-sm-2 col-md-6 col-lg-3" *ngIf="sidebarToggle">
+      <div class="pages-sider" style="border-style: outset; height:300px;">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <i class="glyphicon glyphicon-search"></i>
+            </div>
+            <input type="text" class="form-control" name="searchString" placeholder="Type to search..."
+              [(ngModel)]="searchString" />
+          </div>
+        </div>
+        <table class="table">
+          <tr *ngFor="let data of dataArray | filterProject : 'applicationName' : searchString; let i = index">
+          
+            <td style="text-align: left; cursor: pointer;" (click) = getDescription(data.applicationName)>
+             <span> {{data.applicationName}}</span> 
+            </td>
+           
+          </tr>
+        </table>
+        </div>
+    </div>
+
+    <div class="col-sm-10 col-md-6 col-lg-9" *ngIf='selectedProject'>
+     
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Application Name : {{selectedProject?.applicationName}}</mat-card-title>
+                  <mat-card-subtitle>Service : {{selectedProject?.services}}</mat-card-subtitle>
+                  <mat-card-subtitle>Technology : {{selectedProject?.technology}}</mat-card-subtitle>
+                  <mat-card-subtitle>Value Chain : {{selectedProject?.valueChainArea}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                      {{selectedProject?.description}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                      <mat-card-subtitle>upload
+                        <input type="file" #myInput ng2FileSelect [uploader]="uploader" (change)="FileSelected()" />
+                     
+                    <button style="margin-left: 70%;" mat-raised-button color="primary" mat-button (click)="download()">Click to download</button>
+                  </mat-card-subtitle>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+        <div class="row" *ngIf="selectedProject">
+ 
+            <div class="col-md-3">
+     
+                <!-- <h3>Select files</h3> -->
+     
+                <!-- <div ng2FileDrop
+                     [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                     (fileOver)="fileOverBase($event)"
+                     [uploader]="uploader"
+                     class="well my-drop-zone">
+                    Base drop zone
+                </div> -->
+     
+                <!-- <div ng2FileDrop
+                     [ngClass]="{'another-file-over-class': hasAnotherDropZoneOver}"
+                     (fileOver)="fileOverAnother($event)"
+                     [uploader]="uploader"
+                     class="well my-drop-zone">
+                    Another drop zone
+                </div> -->
+     
+                <!-- Multiple
+                <input type="file" ng2FileSelect [uploader]="uploader" multiple  /><br/> -->
+     
+                <!-- Single
+                <input type="file" ng2FileSelect [uploader]="uploader" (change)="FileSelected()" /> -->
+            </div>
+     
+            <div class="col-md-9" style="margin-bottom: 40px">
+     
+                <!-- <h3>Upload queue</h3>
+                <p>Queue length: {{ uploader?.queue?.length }}</p> -->
+     
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th width="50%">Name</th>
+                        <th>Size</th>
+                        <th>Progress</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of uploader?.queue">
+                        <td><strong>{{ item?.file?.name }}</strong></td>
+                        <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+                        <td *ngIf="uploader.options.isHTML5">
+                            <div class="progress" style="margin-bottom: 0;">
+                                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item?.progress + '%' }"></div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                            <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                            <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                        </td>
+                        <td nowrap>
+                            <button type="button" class="btn btn-success btn-xs"
+                                    (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                                <span class="glyphicon glyphicon-upload"></span> Upload
+                            </button>
+                            <button type="button" class="btn btn-warning btn-xs"
+                                    (click)="item.cancel()" [disabled]="!item.isUploading">
+                                <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                            </button>
+                            <button type="button" class="btn btn-danger btn-xs"
+                                    (click)="item.remove()">
+                                <span class="glyphicon glyphicon-trash"></span> Remove
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+     
+                <div>
+                    <div>
+                        Queue progress:
+                        <div class="progress">
+                            <div #pRef class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader?.progress + '%' }"></div>
+                        </div>
+                    </div>
+                    <!-- <button type="button" class="btn btn-success btn-s"
+                            (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                        <span class="glyphicon glyphicon-upload"></span> Upload all
+                    </button>
+                    <button type="button" class="btn btn-warning btn-s"
+                            (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+                        <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+                    </button>
+                    <button type="button" class="btn btn-danger btn-s"
+                            (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+                        <span class="glyphicon glyphicon-trash"></span> Remove all
+                    </button> -->
+                </div>
+     
+            </div>
+     
+        </div>
+  </div>
+</div>

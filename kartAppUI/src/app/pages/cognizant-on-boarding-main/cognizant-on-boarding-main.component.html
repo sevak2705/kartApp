@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <div class="wizard">
+      <a [routerLink]="['tags']" routerLinkActive="active">
+        User Home
+      </a>
+      <a [routerLink]="['info']" routerLinkActive="active">
+        Cognizant On Boarding process
+      </a>
+    </div>
+
+    <router-outlet></router-outlet>
+
+    </div>

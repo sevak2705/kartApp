@@ -1,0 +1,44 @@
+<div class="example-header">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+
+<div class="example-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <!-- <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+    </ng-container> -->
+    <ng-container matColumnDef="Index">
+      <mat-header-cell *matHeaderCellDef> Index </mat-header-cell>
+      <mat-cell *matCellDef="let element; let i = index;">{{i+1}}</mat-cell>
+    </ng-container>
+    <!-- applicationName Column -->
+    <ng-container matColumnDef="applicationName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.applicationName}} </mat-cell>
+    </ng-container>
+
+    <!-- servicesprovided Column -->
+    <ng-container matColumnDef="services">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Services </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.services}} </mat-cell>
+    </ng-container>
+
+    <!-- technology Column -->
+    <ng-container matColumnDef="technology">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Technology </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.technology}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; let even = even;  columns: displayedColumns;" [ngClass]="{gray: even}">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

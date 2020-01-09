@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Project</h2>
+  <form #projectform="ngForm" (submit)="submitProject(projectform.value)">
+      <div class="form-group">
+          <label for="firstName">Application Name</label>
+          <input type="text" name="applicationName" class="form-control" [(ngModel)]="projectData.applicationName">         
+      </div>
+      <div class="form-group">
+        <label for="firstName">Services Provided</label>
+        <input type="text" name="servicesprovided" class="form-control" [(ngModel)]="projectData.services">         
+    </div>
+    <div class="form-group">
+      <label for="firstName">Technology</label>
+      <input type="text" name="technology" class="form-control" [(ngModel)]="projectData.technology" >         
+  </div>
+  <div class="form-group">
+    <label for="firstName">Value Chain Area</label>
+    <input type="text" name="valueChainArea" class="form-control" [(ngModel)]="projectData.valueChainArea">         
+</div>
+<div class="form-group">
+  <label for="firstName">Functionality In Brief</label>
+  <textarea cols="30" rows="4" name="functionalityInBrief" class="form-control" [(ngModel)]="projectData.description"></textarea>
+  
+</div>
+     
+      <div class="form-group">
+        <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+      </div>
+  </form>
+  </div>

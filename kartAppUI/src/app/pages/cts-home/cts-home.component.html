@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <div class="wizard">
+      <a [routerLink]="['allocation']" routerLinkActive="active">
+        Project Allocation
+      </a>
+      <a [routerLink]="['bootcamp']" routerLinkActive="active">
+        Boot Camp
+      </a>
+      <a [routerLink]="['assets']" routerLinkActive="active">
+        Asset registration
+      </a>
+      <a [routerLink]="['firewall']" routerLinkActive="active">
+        Firewall Requests
+      </a>
+      <a [routerLink]="['token']" routerLinkActive="active">
+        RSA Token Activation
+      </a>
+      <a [routerLink]="['gd']" routerLinkActive="active">
+        GD ID Update
+      </a>
+      <a [routerLink]="['citrix']" routerLinkActive="active">
+        Citrix Access
+      </a>
+    </div>
+
+    <router-outlet></router-outlet>
+
+    </div>

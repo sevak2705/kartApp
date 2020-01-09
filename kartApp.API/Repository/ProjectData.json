@@ -1,0 +1,89 @@
+ [
+    {
+        "applicationName": "Mail Innovation",
+        "services": "Production Support  & Development and Enhancements & Testing",
+        "technology": "Microsoft Technologies(.Net, SQL Server, SSIS, SSRS, WPF, WCF, Web API)",
+        "valueChainArea": "Last Mile Delivery",
+        "description": "UPS Mail Innovations is the largest mail expediter in the industry for Flats and Under 1lb Parcels; servicing both domestic and international needs. UPS Mail Innovations is supported by UPSers and consultants. UPS Mail innovation picks up the customer’s domestic and international mail and transports it to UPS MI facilities strategically located nationwide. The mail is processed, sorted, and introduced into the USPS system for final mile delivery.The service targets mail pieces (flats, bounded printed matter and light weight parcel) that weigh a pound or less, and a minimum of 50 pieces per shipment.",
+        "fileURL":""
+    },
+
+    {
+        "applicationName": "Brokerage Operations Support System (BOSS) (BAS)",
+        "services": "Maintenance and Support",
+        "technology": ".Net, SQL, Active Reports, MQ",
+        "valueChainArea": "Brokerage",
+        "description": "Worldwide UPS Brokerage tool providing the means to clear shipments through customs;assign duties and taxes, prepare customs paperwork, maintain importer information, etc. System is customized to each country specific needs",
+        "fileURL":""
+    },
+
+    {
+        "applicationName": "Delivery Order System (DOS)",
+        "services": "Maintenance and Support",
+        "technology": "Net, SQL, Active Reports, MQ",
+        "valueChainArea": "Brokerage",
+        "description": "Creates delivery order for external carriers to deliver product. Sends the delivery orders to FGV and Image Management",
+        "fileURL":""
+    },
+
+    {
+        "applicationName": "Anti-Smuggling Net (ASN)",
+        "services": "Maintenance and Support",
+        "technology": "Net, SQL, Active Reports, MQ",
+        "valueChainArea": "Brokerage",
+        "description": "Overview ASN is a WCF based service, with a web front end. The service uses a back end SQL server database, and is hosted on the ups DMZ webfarm.The Main function of the ASN is to determine if volume that comes through BOSS meets criteria set fourth by customs officials",
+        "fileURL":""
+    },
+
+    {
+        "applicationName": "Transportation Communication System (TCS)",
+        "services": "Maintenance and Support",
+        "technology": ".Net, SQL Server",
+        "valueChainArea": "Brokerage",
+        "description": "TCS is a truck scheduling and costing system used by the Carrier Management department in Louisville, KY.It is used for distributing schedules for the NAAF movement weekly, and to produce the Cost Advisory.Users can enter truck operation costs and contracts, as well as upload schedule data to produce the weekly schedule",
+        "fileURL":""
+    },
+
+    {
+        "applicationName": "Brokerage Data Management (BDM)",
+        "services": "Maintenance ,Support & Development",
+        "technology": ".Net, SQL Server",
+        "valueChainArea": "Brokerage",
+        "description": "The application Brokerage Data Management (BDM) is a business application developed under BSC6(Brokerage Systems Consolidation) .BDM is a suite of service based individual applications:  BDM-C: Customer Integration \"BDM-R: Reference Data Module BDM-S: Shipment Module BDM-I: Commercial Invoice Module BDM-S and BDM-I provide platforms for Broker Only shipment creation, Commercial Invoice key entry, and consolidation of Brokerage shipments with Commercial Invoices. BDM-C provides customer reference data for shipment creation. BDM-R provides reference data like country, currency, charge codes, station codes,carrier information, FIRMS codes, entry type, and mode of transportation. The reference data is used in the process of shipment creation",
+        "fileURL":""
+    },
+    {
+        "applicationName": "Tradesense",
+        "services": "Maintenance ,Support & Development",
+        "technology": ".Net and VB6,Oracle",
+        "valueChainArea": "Brokerage",
+        "description": "UPS TradeSense application allows the UPS Trade Management Services group to manage trade compliance for the customers.It includes the following modules, Import, Export, NAFTA, Drawback and Reconciliation",
+        "fileURL":""
+    },
+    {
+        "applicationName": "Operational Finance (OF)",
+        "services": "Maintenance and Support",
+        "technology": "MAGIC XPA & XPI,Oracle",
+        "valueChainArea": "Brokerage",
+        "description": "OpFin supports Vendor payments in Brokerage applications (BOSS, BDM), serves as an integration component between Brokerage, Transportation and Finance,and enforces F&A\"s zero-tollerence policy for Paid-vs.-Billed. (The application is also known as: OF, Boss/OF).",
+        "fileURL":""
+    },
+    {
+        "applicationName": "WorldCom (WC)",
+        "services": "Maintenance and Support",
+        "technology": "Coldfusion,DB2",
+        "valueChainArea": "Brokerage",
+        "description": "WorldCom is an internal UPS website that provides details about shipping internationally to other countries that currently have UPS service.The web based application can only be accessed internally within our UPS network. Primary users of the WorldCom application include the global Customer Service Centers andthe Business Development Groups. WorldCom contains country pair international shipping information. The WorldCom database also feeds the Import/Export Country Regulations tool provided on ups.com",
+        "fileURL":""
+    },
+    {
+        "applicationName": "Undeliverable Imports (UDI)",
+        "services": "Maintenance ,Support & Development",
+        "technology": "Coldfusion,DB2",
+        "valueChainArea": "Brokerage",
+        "description": "This application deals with Undeliverable Imports area for UPS",
+        "fileURL":""
+    }
+    
+
+  ]

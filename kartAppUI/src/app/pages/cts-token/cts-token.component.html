@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 page">
+      <button type="button" class="btn btn-success btn-lg" *ngIf="!docVisible" (click)="showDoc()">View and Print Check list</button>
+      <pdf-viewer *ngIf="docVisible" [src]="pdfSrc" 
+      [original-size]="false"
+      [autoresize]="true"
+      [show-borders]="true"
+      [show-all]="false"
+      [render-text]="true"
+      style="display: block;"
+        ></pdf-viewer>
+    </div>
+    <div class="col-6 player">
+        <iframe src="https://www.youtube.com/embed/iHhcHTlGtRs" frameborder="0" allowfullscreen width="500"
+        height="300"></iframe>
+        <button type="button" class="btn btn-success btn-lg">View Process document</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,23 @@
+<div class="pages-sider" [ngClass]="{'side-collapsed':!sidebarToggle}">
+  <span class="sidebar-top-line"></span>
+  <ul class="menu-wrap animated fadeIn">
+    <li class="menu-item">
+         <a class="menu-link" [routerLink]="['index']"> <div class="placeholder">
+        <i class="fa fa-dashboard fa-fw"></i>
+      </div>
+      <span class="text">Home</span></a>
+     </li>
+    <li class="menu-item">
+         <a class="menu-link" [routerLink]="['project']"> <div class="placeholder">
+        <i class="fa fa-diamond fa-fw"></i>
+      </div>
+      <span class="text">Project</span></a>
+     </li>
+     <li class="menu-item">
+      <a class="menu-link" [routerLink]="['project/projectAdd']"> <div class="placeholder">
+     <i class="fa fa-plus-circle fa-fw"></i>
+   </div>
+   <span class="text">Add Project</span></a>
+  </li>
+ </ul>
+</div>

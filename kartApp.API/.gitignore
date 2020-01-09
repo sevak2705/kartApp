@@ -1,0 +1,10 @@
+../.vscode/
+bin
+obj
+*.db
+../.vscode/launch.json
+../.vscode/tasks.json
+Migrations
+wwwroot
+.config
+.vs
